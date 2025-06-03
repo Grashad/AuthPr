@@ -1,7 +1,8 @@
 
 import './App.css';
 
-function App() {
+function BaseSection() {
+
 }
 
-export default App;
+export default BaseSection
