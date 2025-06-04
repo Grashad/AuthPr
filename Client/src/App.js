@@ -1,12 +1,14 @@
 import './App.css';
+import Login from './Components/Login Box/Login Box';
 
 
 
 
 
-
-function BaseSection() {
-
+function App() {
+ return ( <div className='containerWrap'>
+<Login/>
+</div> )
 }
 
-export default BaseSection
+export default App;

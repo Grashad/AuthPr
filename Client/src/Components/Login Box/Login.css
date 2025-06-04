@@ -1,0 +1,31 @@
+.loginWrap {
+    display: flex;
+    background: rgb(24, 24, 131);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    width: 40rem;
+    height: 10rem;
+    border-radius: 5px;
+}
+
+.formWrap {
+    display: inherit;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.formField {
+    display: grid; 
+    flex-direction: column;
+    background: gray;
+    padding-left: 15px;
+    padding-right: 15px;    
+    height: 5rem;
+    padding-bottom: 10px;
+    padding-top: 5px;
+}
+
