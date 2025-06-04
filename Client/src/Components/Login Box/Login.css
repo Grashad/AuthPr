@@ -1,12 +1,12 @@
 .loginWrap {
     display: flex;
-    background: rgb(24, 24, 131);
+    background: radial-gradient(circle,rgba(54, 167, 199, 1) 0%, rgba(53, 53, 112, 1) 100%);
     color: white;
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    width: 40rem;
-    height: 10rem;
+    width: 45rem;
+    height: 15rem;
     border-radius: 5px;
 }
 
@@ -14,18 +14,42 @@
     display: inherit;
     justify-content: center;
     align-items: center;
-    width: 100%;
+    width:80%;
     border-radius: 10px;
+    border-radius: 5px;
+    background: radial-gradient(circle,rgba(85, 107, 112, 1) 0%, rgba(53, 53, 112, 1) 100%);
+    padding-left: 15px;
+    padding-right: 15px; 
 }
-
+.containerText {
+    font-size: 2rem;
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
 .formField {
     display: grid; 
     flex-direction: column;
-    background: gray;
-    padding-left: 15px;
-    padding-right: 15px;    
+    padding-left: 5px;
+    padding-right: 5px;   
     height: 5rem;
     padding-bottom: 10px;
-    padding-top: 5px;
+    padding-top: 5px; 
+    font-size: 1.4rem;
+    font-weight: 600;
+    align-content: center;
+    justify-items: center;
+    
 }
 
+.inputField {
+    border-radius: 5px;
+    color: gray;
+}
+
+.regLink {
+    font-size: 1.6rem;
+    font-weight: lighter;
+    margin: 0px;
+    padding-top: 5px;
+}
