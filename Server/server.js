@@ -2,7 +2,7 @@ const express = require('express')
 const bcrypt = require(`bcrypt`)
 const mongoose = require("mongoose")
 const cors = require("cors")
-const strModel = require('/models/testStr')
+const strModel = require('./models/DBstorage')
 
 const app = express()
 app.use(express.json())

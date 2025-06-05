@@ -1,22 +1,22 @@
 import './App.css';
 import Login from './Components/Login Box/LoginBox';
-import Register from './Components/SignUp/Signup'
+import Register from './Components/SignUp/Signup';
 import { useState } from 'react';
-import { Routes, Route, BrowserRouter } from 'react-router-dom';
+import {BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 
 
 
 function App() {
- return ( <div className='containerWrap'>
+return (
 <BrowserRouter>
 <Routes>
-    <Route path='/Register' element={<Register />}></Route>
-     <Route path='/Login' element={<Login />}></Route>
+    <Route path='/register' element={<Register />}></Route>
+     <Route path='/login' element={<Login />}></Route>
 </Routes>
 </BrowserRouter>
-</div> )
+)
 }
 
 export default App;

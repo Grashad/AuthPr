@@ -9,7 +9,7 @@ const [password, setPassword] = useState()
 
 const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post("htttp://localhost:4000/register", {name, email, password})
+    axios.post("htttp://localhost:3000/register", {name, email, password})
     .then(result => console.log(result))
     .catch(err => console.log(err))
 }
