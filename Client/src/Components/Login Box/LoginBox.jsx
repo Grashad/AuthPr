@@ -1,15 +1,34 @@
 
+import { useState } from 'react';
 import './Login.css';
+import { Link } from "react-router-dom"
+import axios from "axios"
 
 function Login() {
-  return  <div className='loginWrap'>
+  const [username,setUsername] = useState()
+  const [password,setPassword] = useState()
+  const frmSubmit = (e) => {
+    e.preventDefault()
+    axios.post("htttp://localhost:3000/login", {username, password})
+    .then(item => console.log(item))
+    .catch(err => console.log(err))
+  }
+  return ( <div className='loginWrap'>
         <h3 className='containerText'>Login</h3>
-        <div className='formWrap'>
-        <form className='formField'>Username <input className='inputField' placeholder='Username'></input></form>
-        <form className='formField'>Password <input className='inputField' placeholder='Password'></input></form>
-        </div>
+   
+        <form className='formWrap' onSubmit={frmSubmit}>
+        <div className='formField'>Username 
+          <input className='inputField' type='text'  required placeholder='Username' onChange={(e) => {
+            setUsername(e.target.value)
+          }}></input></div>
+        <div className='formField'>Password 
+          <input className='inputField' type='text'   required placeholder='Password' onChange={(e) => {
+            setPassword(e.target.value)
+          }}></input></div>
+        </form>
         <p className='regLink'>register</p>
     </div>
+  )
 }
 
 export default Login;
