@@ -34,7 +34,7 @@ function Login() {
             setPassword(e.target.value)
           }}></input></div>
         </form>
-        <p className='regLink' ><Link to={{pathname: "/register"}}>register</Link> </p>
+        <Link className='linkStyle' to={{pathname: "/register"}}><p className='regLink' >register</p></Link>
     </div>
   )
 }

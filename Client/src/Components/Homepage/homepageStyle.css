@@ -1,0 +1,31 @@
+.mPage {
+    display: flex;
+    background: radial-gradient(circle,rgb(66, 36, 175) 0%, rgb(93, 35, 146) 100%);
+    height: 35rem;
+    width: 35rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    color: white;
+    box-shadow: 1px 6px 3px hsla(0, 0%, 0%, 0.151);
+}
+
+.buttonWrap {
+   display: flex;
+   height: 5rem;
+   width: 30rem;
+   justify-content: center;
+   align-content: center;
+}
+
+.hButton {
+ width: 10rem;
+ height: 3rem;
+ margin-left: 10px;
+ margin-right: 10px;
+ background-color: transparent;
+ color: white;
+ border: 1px solid white;
+ border-radius: 5px;
+}

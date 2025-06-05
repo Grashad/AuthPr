@@ -1,6 +1,6 @@
 .loginWrap {
     display: flex;
-    background: radial-gradient(circle,rgba(54, 167, 199, 1) 0%, rgba(53, 53, 112, 1) 100%);
+    background: radial-gradient(circle,rgb(66, 36, 175) 0%, rgb(93, 35, 146) 100%);
     color: white;
     justify-content: center;
     align-items: center;
@@ -17,7 +17,8 @@
     width:80%;
     border-radius: 10px;
     border-radius: 5px;
-    background: radial-gradient(circle,rgba(85, 107, 112, 1) 0%, rgba(53, 53, 112, 1) 100%);
+    background: transparent;
+    border: 1px solid white;
     padding-left: 15px;
     padding-right: 15px; 
 }
@@ -44,12 +45,25 @@
 
 .inputField {
     border-radius: 5px;
-    color: gray;
+    background: rgba(255, 255, 255, 0.253);
+    border: 1px solid white;
+    color: white;
 }
 
 .regLink {
-    font-size: 1.6rem;
+    display: flex;
+    width: 8rem;
+    height: 2rem;
+    font-size: 1.4rem;
     font-weight: lighter;
-    margin: 0px;
-    padding-top: 5px;
+    margin-top: 10px;
+    border: 1px solid rgb(139, 73, 216);
+    border-radius: 5px;
+    justify-content: center;
+    align-content: center;
+}
+
+.linkStyle:visited , .linkStyle:link {
+    text-decoration: none;
+    color: rgb(139, 73, 216);
 }
