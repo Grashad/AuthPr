@@ -1,44 +1,20 @@
 const express = require('express')
-const app = express()
 const bcrypt = require(`bcrypt`)
+const mongoose = require("mongoose")
+const cors = require("cors")
+const strModel = require('/models/testStr')
 
+const app = express()
 app.use(express.json())
+app.use(cors())
 
-const users = []
+mongoose.connect("mongodb://localhost:27017/testStr")
+app.post('/register', (req,res) =>{
+    strModel.create(req.body)
+    .then(str => res.json(str))
+    .catch(err => res.json(err))
+})
 
-app.get(`/users`, (req,res) => {
-res.json(users)
-});
-
-app.post(`/users`,async (req,res) => {
-    try {
-        const hshPassword = await bcrypt.hash(req.body.password, 10)
-const user = {name: req.body.name, password: hshPassword }
-users.push(user) 
-res.status(201).send()
-hash(salt + "password")
-    }
-    catch {
-        res.status(500).send()
-    }
-});
-
-app.post("/users/login", async (req,res) => {
-    const user = users.find(item => item.name === req.body.name)
-    if(user == null) {
-        return res.status(400).send("auth failed")
-    }
-    try {
-     if(await bcrypt.compare(req.body.name, user.password)) {
-        res.send("success")
-     }
-     else {
-        res.send("Not allowed")
-     }
-    }
-    catch {
-        res.status(500).send()
-    }
-}); 
-
-app.listen(3000)
+app.listen(4000, () => {
+    console.log("Connection ON")
+})
