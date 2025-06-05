@@ -1,16 +1,24 @@
 
 import { useState } from 'react';
 import './Login.css';
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import axios from "axios"
+
 
 function Login() {
   const [username,setUsername] = useState()
   const [password,setPassword] = useState()
+  const navigate = useNavigate()
   const frmSubmit = (e) => {
     e.preventDefault()
     axios.post("htttp://localhost:3000/login", {username, password})
-    .then(item => console.log(item))
+    .then(item => {
+            console.log(item)
+          if(item.data === 'success') {
+           navigate(`/home`)
+          }
+        })
+        
     .catch(err => console.log(err))
   }
   return ( <div className='loginWrap'>
@@ -26,7 +34,7 @@ function Login() {
             setPassword(e.target.value)
           }}></input></div>
         </form>
-        <p className='regLink'>register</p>
+        <p className='regLink' ><Link to={{pathname: "/register"}}>register</Link> </p>
     </div>
   )
 }

@@ -9,6 +9,29 @@ app.use(express.json())
 app.use(cors())
 
 mongoose.connect("mongodb://localhost:27017/testStr")
+app.post("/login",(req, res) => {
+const {username,password} = req.body;
+strModel.findOne({username: username})
+.then(user => {
+    if(user) {
+    if(user.password === password) {
+        res.json('success')
+    }
+    else {
+        res.json("Password Incorrect")
+    }
+}
+else {
+    res.json("user does not exists")
+}
+})
+})
+
+        
+
+
+
+
 app.post('/register', (req,res) =>{
     strModel.create(req.body)
     .then(str => res.json(str))
