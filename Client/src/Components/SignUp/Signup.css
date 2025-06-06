@@ -1,5 +1,12 @@
 .registration-form {
     display: flex;
     width: 50vw;
-    height: 50vw;
+    height: 40vw;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    background: radial-gradient(circle,rgb(66, 36, 175) 0%, rgb(93, 35, 146) 100%);
+    color: white;
+    border-radius: 5px;
 }
+
