@@ -1,14 +1,16 @@
+
 .mPage {
     display: flex;
     background: radial-gradient(circle,rgb(66, 36, 175) 0%, rgb(93, 35, 146) 100%);
-    height: 35rem;
-    width: 35rem;
+    height: 40rem;
+    width: 40rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     border-radius: 15px;
     color: white;
     box-shadow: 1px 6px 3px hsla(0, 0%, 0%, 0.151);
+    padding-bottom: 20px;
 }
 
 .buttonWrap {
@@ -29,3 +31,4 @@
  border: 1px solid white;
  border-radius: 5px;
 }
+

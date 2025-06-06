@@ -22,7 +22,6 @@ function Login() {
     .catch(err => console.log(err))
   }
   return ( <div className='loginWrap'>
-        <h3 className='containerText'>Login</h3>
    
         <form className='formWrap' onSubmit={frmSubmit}>
         <div className='formField'>Username 
@@ -32,9 +31,12 @@ function Login() {
         <div className='formField'>Password 
           <input className='inputField' type='text'   required placeholder='Password' onChange={(e) => {
             setPassword(e.target.value)
-          }}></input></div>
+          }}></input>
+          </div>
         </form>
-        <Link className='linkStyle' to={{pathname: "/register"}}><p className='regLink' >register</p></Link>
+         <p className='regStyle '>No account?</p>
+        <Link className='linkStyle' to={{pathname: "/register"}}>
+        <p className='regLink' >register</p></Link>
     </div>
   )
 }

@@ -1,12 +1,14 @@
+
+
 .loginWrap {
     display: flex;
-    background: radial-gradient(circle,rgb(66, 36, 175) 0%, rgb(93, 35, 146) 100%);
+    background:transparent;
     color: white;
     justify-content: center;
     align-items: center;
     flex-flow: column;
-    width: 45rem;
-    height: 15rem;
+    width: 35rem;
+    height: 12rem;
     border-radius: 5px;
 }
 
@@ -14,13 +16,15 @@
     display: inherit;
     justify-content: center;
     align-items: center;
-    width:80%;
+    width:85%;
+    height: 80%;
     border-radius: 10px;
     border-radius: 5px;
     background: transparent;
-    border: 1px solid white;
     padding-left: 15px;
     padding-right: 15px; 
+    background: transparent;
+    
 }
 .containerText {
     font-size: 2rem;
@@ -36,7 +40,7 @@
     height: 5rem;
     padding-bottom: 10px;
     padding-top: 5px; 
-    font-size: 1.4rem;
+    font-size: 1.1rem;
     font-weight: 600;
     align-content: center;
     justify-items: center;
@@ -44,20 +48,29 @@
 }
 
 .inputField {
+    width: 90%;
+    font-size: 1rem;
     border-radius: 5px;
     background: rgba(255, 255, 255, 0.253);
     border: 1px solid white;
     color: white;
 }
+.regStyle {
+    display: flex;
+    font-size: 0.8rem;
+    justify-self: center;
+    align-self: center;
+    margin: 0;
+}
 
 .regLink {
     display: flex;
-    width: 8rem;
-    height: 2rem;
-    font-size: 1.4rem;
+    width: 6rem;
+    height: 1.5rem;
+    font-size: 1    rem;
     font-weight: lighter;
-    margin-top: 10px;
-    border: 1px solid rgb(139, 73, 216);
+    margin-top: 0;
+    border: 1px solid white;
     border-radius: 5px;
     justify-content: center;
     align-content: center;
@@ -65,5 +78,28 @@
 
 .linkStyle:visited , .linkStyle:link {
     text-decoration: none;
-    color: rgb(139, 73, 216);
+    color: white;
+}
+
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.loginWrap {
+	-webkit-animation: fade-in 1.2s ease-in both;
+	        animation: fade-in 1.2s ease-in both;
 }
