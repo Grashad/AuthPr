@@ -10,9 +10,14 @@ const [rptPassword,setRptPassword] = useState()
 
 const handleSubmit = (e) => {
     e.preventDefault()
-    axios.post("htttp://localhost:3000/register", {name, email, password})
+    if(password === rptPassword && email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
+    axios.post("http://localhost:4000/register", {name, email, password})
     .then(result => console.log(result))
     .catch(err => console.log(err))
+    }
+    else {
+      console.log("incorrect password/email does not exsist")
+    }
 }
 return (
 <div className="registration-form">
@@ -77,7 +82,7 @@ return (
         minLength="8"
         maxLength="16"
         onChange={(e) => {
-         
+         setRptPassword(e.target.value)
         }}
       />
     </div>

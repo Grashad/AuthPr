@@ -11,7 +11,7 @@ function Login() {
   const navigate = useNavigate()
   const frmSubmit = (e) => {
     e.preventDefault()
-    axios.post("htttp://localhost:3000/login", {username, password})
+    axios.post("htttp://localhost:4000/login", {username, password})
     .then(item => {
             console.log(item)
           if(item.data === 'success') {
