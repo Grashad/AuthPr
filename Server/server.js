@@ -10,8 +10,8 @@ app.use(cors())
 
 mongoose.connect("mongodb://localhost:27017/testStr")
 app.post("/login", (req, res) => {
-    const { username, password } = req.body;
-    strModel.findOne({ username: username })
+    const { name, password } = req.body;
+    strModel.findOne({ name: name })
         .then(user => {
             bcrypt.compare(password, user.password, (err, response) => {
                 if (err) {
@@ -41,7 +41,7 @@ app.post('/register', (req, res) => {
     const { email, name, password } = req.body
     strModel.findOne({ name: name},{email: email})
         .then(user => {
-            if(user == null) {
+            if(user === null) {
                 bcrypt.hash(password, 10)
                     .then(hash => {
                         strModel.create({ name: name, email, password: hash })

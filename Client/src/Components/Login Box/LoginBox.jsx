@@ -6,12 +6,12 @@ import axios from "axios"
 
 
 function Login() {
-  const [username,setUsername] = useState()
+  const [name,setName] = useState()
   const [password,setPassword] = useState()
   const navigate = useNavigate()
   const frmSubmit = (e) => {
     e.preventDefault()
-    axios.post("htttp://localhost:4000/login", {username, password})
+    axios.post("http://localhost:4000/login", {name, password})
     .then(item => {
             console.log(item)
           if(item.data === 'success') {
@@ -23,17 +23,21 @@ function Login() {
   }
   return ( <div className='loginWrap'>
    
-        <form className='formWrap' onSubmit={frmSubmit}>
+        <form className='formWrap' onSubmit={frmSubmit} id="btnFrm">
         <div className='formField'>Username 
           <input className='inputField' type='text'  required placeholder='Username' onChange={(e) => {
-            setUsername(e.target.value)
+            setName(e.target.value)
           }}></input></div>
         <div className='formField'>Password 
-          <input className='inputField' type='text'   required placeholder='Password' onChange={(e) => {
+          <input className='inputField' type='password'  required placeholder='Password' onChange={(e) => {
             setPassword(e.target.value)
           }}></input>
+    
           </div>
         </form>
+          <div className='btnWrap'>
+          <button type="submit" className='logBtn' form='btnFrm' >Login</button>
+          </div>
          <p className='regStyle '>No account?</p>
         <Link className='linkStyle' to={{pathname: "/register"}}>
         <p className='regLink' >register</p></Link>
