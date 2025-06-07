@@ -6,6 +6,7 @@ function Register() {
 const [name, setName] = useState()
 const [email, setEmail] = useState()
 const [password, setPassword] = useState()
+const [rptPassword,setRptPassword] = useState()
 
 const handleSubmit = (e) => {
     e.preventDefault()
@@ -16,10 +17,11 @@ const handleSubmit = (e) => {
 return (
 <div className="registration-form">
   <h2>Create Account</h2>
-  <form onSubmit={handleSubmit}>
+  <form className="Wrap" onSubmit={handleSubmit}>
     <div className="form-group">
-      <label htmlFor="username">Username</label>
+      <label  htmlFor="username" className="lbl">Username</label>
       <input
+        className="iForm"
         type="text"
         id="username"
         name="username"
@@ -32,8 +34,9 @@ return (
     </div>
 
     <div className="form-group">
-      <label htmlFor="email">Email</label>
+      <label  htmlFor="email" className="lbl">Email</label>
       <input
+        className="iForm"
         type="email"
         id="email"
         name="email"
@@ -46,14 +49,16 @@ return (
     </div>
 
     <div className="form-group">
-      <label htmlFor="password">Password</label>
+      <label htmlFor="password" className="lbl">Password</label>
       <input
+        className="iForm"
         type="password"
         id="password"
         name="password"
         required
         placeholder="Create password"
         minLength="8"
+        maxLength="16"
          onChange={(e) => {
             setPassword(e.target.value)
         }}
@@ -61,30 +66,32 @@ return (
     </div>
 
     <div className="form-group">
-      <label htmlFor="confirmPassword">Confirm Password</label>
+      <label htmlFor="confirmPassword" className="lbl">Confirm Password</label>
       <input
+        className="iForm"
         type="password"
         id="confirmPassword"
         name="confirmPassword"
         required
         placeholder="Repeat password"
         minLength="8"
+        maxLength="16"
         onChange={(e) => {
-            setPassword(e.target.value)
+         
         }}
       />
     </div>
 
-    <div className="form-group terms">
-      <input type="checkbox" id="terms" name="terms" required />
-      <label htmlFor="terms">I agree to the Terms & Conditions</label>
+    <div className="form-group terms" >
+      <input className="checkbx" type="checkbox" id="terms" name="terms" required />
+      <label className="TC" htmlFor="terms">I agree to the Terms & Conditions</label>
     </div>
 
     <button type="submit" className="submit-btn">Register</button>
   </form>
   
   <div className="login-link">
-    Already have an account? <a href="/login">Sign in</a>
+    Already have an account? <a className="loglink" href="/homepage">Sign in</a>
   </div>
 </div>
 )
