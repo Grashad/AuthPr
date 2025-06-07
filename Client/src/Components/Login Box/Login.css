@@ -76,6 +76,28 @@
     align-content: center;
 }
 
+.btnWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logBtn {
+  display: flex;
+  width: 5rem;
+ height: 1.5rem;
+ margin-left: 10px;
+ margin-right: 10px;
+ background-color: transparent;
+ color: white;
+ border: 1px solid white;
+ border-radius: 5px;
+font-size: 1rem;
+justify-content: center;
+align-items: center;
+margin-bottom: 1rem;
+}
+
 .linkStyle:visited , .linkStyle:link {
     text-decoration: none;
     color: white;
