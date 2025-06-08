@@ -15,7 +15,7 @@ app.post("/login", (req, res) => {
         .then(user => {
             bcrypt.compare(password, user.password, (err, response) => {
                 if (err) {
-                    res.json("password incorrect")
+                    res.json("login data incorrect")
                 }
                 if (response) {
                     res.json("Welcome")
@@ -28,7 +28,7 @@ app.post("/login", (req, res) => {
             }
             else {
 
-                res.json("user does not exists")
+                res.json("login data incorrect")
             }
         })
 })
