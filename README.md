@@ -5,7 +5,7 @@ Frontend (React) → Axios POST → Backend (Express.js) → MongoDB User Valida
 >>Key Technical Components:
 
     Client-Side
-    React captures user credentials → Axios sends encrypted HTTPS POST request to /register endpoint
+    React captures user credentials → Axios sends HTTP POST request to /register endpoint
 
     Server-Side Validation
     Express.js controller checks MongoDB for existing user via User.findOne()
