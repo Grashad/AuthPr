@@ -13,6 +13,7 @@ app.post("/login", (req, res) => {
     const { name, password } = req.body;
     strModel.findOne({ name: name })
         .then(user => {
+            if(user !== null) {
             bcrypt.compare(password, user.password, (err,response) => {
                 if (response === false) {
                     res.json("login data incorrect")
@@ -24,7 +25,8 @@ app.post("/login", (req, res) => {
                     res.json(err)
                 }
             })
-            
+        }
+         else {res.json("login data incorrect")}   
         })
 })
 
