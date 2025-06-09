@@ -10,6 +10,7 @@ const [rptPassword,setRptPassword] = useState()
 
 const handleSubmit = (e) => {
     e.preventDefault()
+    if(password.match(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/) !== null) {
     if(password === rptPassword && email.match(/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
     axios.post("http://localhost:4000/register", {name, email, password})
     .then(result => console.log(result))
@@ -17,6 +18,10 @@ const handleSubmit = (e) => {
     }
     else {
       console.log("incorrect password/email does not exsist")
+    }
+    }
+    else {
+      console.log("password requires at least 1 uppercase character and 1 special character")
     }
 }
 return (
@@ -66,6 +71,8 @@ return (
         maxLength="16"
          onChange={(e) => {
             setPassword(e.target.value)
+          
+
         }}
       />
     </div>
