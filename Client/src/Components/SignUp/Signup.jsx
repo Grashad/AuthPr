@@ -35,6 +35,7 @@ return (
         type="text"
         id="username"
         name="username"
+        minLength="4"
         required
         placeholder="Enter username"
         onChange={(e) => {
