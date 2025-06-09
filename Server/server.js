@@ -7,7 +7,7 @@ const strModel = require('./models/DBstorage')
 const app = express()
 app.use(express.json())
 app.use(cors())
-
+/*Login Module*/
 mongoose.connect("mongodb://localhost:27017/testStr")
 app.post("/login", (req, res) => {
     const { name, password } = req.body;
@@ -33,7 +33,7 @@ app.post("/login", (req, res) => {
 
 
 
-
+/*Register Module*/
 app.post('/register', (req, res) => {
     const { email, name, password } = req.body
     strModel.findOne({ name: name},{email: email})
