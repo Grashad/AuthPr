@@ -12,15 +12,11 @@ function Login() {
   const frmSubmit = (e) => {
     e.preventDefault()
     axios.post("http://localhost:4000/login", {name, password})
-    .then(item => {
-            console.log(item)
-          if(item.data === 'success') {
-           navigate(`/home`)
-          }
-        })
-        
-    .catch(err => console.log(err))
-  }
+              .then(result => console.log(result))
+              .catch(err => console.log(err))
+        }
+  
+
   return ( <div className='loginWrap'>
    
         <form className='formWrap' onSubmit={frmSubmit} id="btnFrm">
@@ -36,7 +32,7 @@ function Login() {
           </div>
         </form>
           <div className='btnWrap'>
-          <button type="submit" className='logBtn' form='btnFrm' >Login</button>
+          <button type="submit" className='logBtn' form='btnFrm' required >Login</button>
           </div>
          <p className='regStyle '>No account?</p>
         <Link className='linkStyle' to={{pathname: "/register"}}>
