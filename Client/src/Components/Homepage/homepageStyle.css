@@ -2,8 +2,9 @@
 .mPage {
     display: flex;
     background: radial-gradient(circle,rgb(66, 36, 175) 0%, rgb(93, 35, 146) 100%);
-    height: 40rem;
-    width: 40rem;
+    min-width: 35rem;
+    min-height: 40rem;
+    max-width: 60rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -11,6 +12,8 @@
     color: white;
     box-shadow: 1px 6px 3px hsla(0, 0%, 0%, 0.151);
     padding-bottom: 20px;
+    flex-wrap: wrap;
+    flex-grow: 1;
 }
 
 .buttonWrap {

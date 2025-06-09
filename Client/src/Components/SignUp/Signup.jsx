@@ -17,7 +17,7 @@ const handleSubmit = (e) => {
     .catch(err => console.log(err))
     }
     else {
-      console.log("incorrect password/email does not exsist")
+      console.log("password does not match/email does not exsist")
     }
     }
     else {
