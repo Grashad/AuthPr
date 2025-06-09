@@ -26,7 +26,7 @@ app.post("/login", (req, res) => {
                 }
             })
         }
-         else {res.json("login data incorrect")}   
+         else {res.json("user does not exist")}   
         })
 })
 
@@ -36,10 +36,9 @@ app.post("/login", (req, res) => {
 /*Register Module*/
 app.post('/register', (req, res) => {
     const { email, name, password } = req.body
-    strModel.findOne({ name: name},{email: email})
+    strModel.findOne({$or:[{name: name},{email: email}]})
         .then(user => {
-
-            if(user === null && email === null) {
+            if(user === null) {
                 bcrypt.hash(password, 10)
                     .then(hash => {
                         strModel.create({ name: name, email, password: hash })
@@ -52,6 +51,7 @@ app.post('/register', (req, res) => {
                 res.json("user already exists")
             }
         })
+    
 
 
 
