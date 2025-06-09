@@ -7,12 +7,13 @@ const strModel = require('./models/DBstorage')
 const app = express()
 app.use(express.json())
 app.use(cors())
-
+/*Login Module*/
 mongoose.connect("mongodb://localhost:27017/testStr")
 app.post("/login", (req, res) => {
     const { name, password } = req.body;
     strModel.findOne({ name: name })
         .then(user => {
+            if(user !== null) {
             bcrypt.compare(password, user.password, (err,response) => {
                 if (response === false) {
                     res.json("login data incorrect")
@@ -24,14 +25,15 @@ app.post("/login", (req, res) => {
                     res.json(err)
                 }
             })
-            
+        }
+         else {res.json("login data incorrect")}   
         })
 })
 
 
 
 
-
+/*Register Module*/
 app.post('/register', (req, res) => {
     const { email, name, password } = req.body
     strModel.findOne({ name: name},{email: email})
